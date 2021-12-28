@@ -1,0 +1,258 @@
+
+
+:root {
+    --primary-cyan: hsl(172, 67%, 45%);
+  
+    --dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Dark-grayish-cyan-two: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Light-grayish-cyan-two: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+  }
+
+html {
+    font-size: 62.5%;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--Light-grayish-cyan);
+    font-family: "Space Mono", monospace;
+    font-size: 2.4rem;
+}
+
+.logo {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.tip-calculator {
+    background-color: var(--White);
+    display: flex;
+    flex-direction: column;
+    padding: 2.3rem;
+    border-radius: 1.5rem;
+}
+
+label {
+    color: var(--Dark-grayish-cyan);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+input{
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    padding-right: 1.8rem;
+    background-position: 1.7rem 1.5rem;
+    background-repeat: no-repeat;
+    background-color: var(--Light-grayish-cyan-two);
+    text-align: right;
+    color: var(--dark-cyan);
+    font-weight: 700;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 0.6rem;
+}
+
+.tips:hover{
+  background-color: var(--primary-cyan);
+}
+
+.reset:hover{
+    background-color: var(--Light-grayish-cyan);
+}
+
+.tips:hover,
+.reset:hover,
+input,
+.reset {
+  transition: background 0.2s;
+}
+
+input:hover {
+    border: 3px solid var(--primary-cyan);
+  }
+
+.bill-input {
+    display: block;
+    width: 100%;
+    background-image: url("images/icon-dollar.svg");
+    margin-bottom: 3.6rem;
+}
+
+.tip {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem 0;
+    gap: 0.2em 1.2rem;
+}
+
+.tips {
+    background-color: var(--dark-cyan);
+    color: var(--White);
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.active-tip {
+    color: var(--dark-cyan);
+    background-color: var(--primary-cyan);
+    font-weight: bolder;
+}
+
+.people-input {
+    background-image: url("images/icon-person.svg");
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.result {
+    background-color: var(--dark-cyan);
+    color: var(--White);
+    border-radius: 1.2rem;
+    padding: 3.9rem 2.1rem;
+}
+
+.tip-amount, .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.person {
+    font-size: 1.2rem;
+    color: var(--Dark-grayish-cyan-two);
+    font-weight: 700;
+}
+
+.amount{
+    font-size: 2.8rem;
+    color: var(--primary-cyan);
+    font-weight: 700;
+}
+
+.reset {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-cyan);
+    background-color: var(--primary-cyan);
+    padding: 0.9rem 0;
+    border-radius: 0.5px;
+    cursor: pointer;
+}
+
+#tip-custom input {
+    width: 100%;
+    text-align: center;
+    font-size: inherit;
+    padding: 1rem;
+    font-weight: 700;
+    font-family: inherit;
+}
+
+.people-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error {
+    color: red;
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        padding: 10rem 15rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10rem;
+        height: 100%;
+    }
+
+    input{
+        width: 4.15rem;
+        padding: 1rem;
+        background-position: 1.7rem 1.8rem;
+    }
+
+    .tip-calculator{
+        width: 100%;
+        flex-direction: row;
+        column-gap: 4rem;
+        border-radius: 1.5rem;
+        padding: 2.5rem;
+    }
+
+    .part-one{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0 0 1.3rem;
+    }
+
+    .bill-input{
+        margin-bottom: 3.4rem;
+    }
+
+    .tip{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem 1.8rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .tips {
+        height: 5.5rem;
+    }
+
+    .result{
+        margin: 0 auto;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        padding: 4.8rem 3.8rem;
+    }
+
+    .amount{
+        font-size: 5rem;
+    }
+    
+    .tip-amount{
+        column-gap: 4rem;
+    }
+
+    .reset {
+        padding: 1.3rem 0;
+        margin: auto 0;
+        position: relative;
+        top: 6rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        padding: 10rem 20rem;
+    }
+}
